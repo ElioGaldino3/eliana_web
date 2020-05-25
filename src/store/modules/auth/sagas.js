@@ -5,6 +5,7 @@ import { signInSuccess, signFailure, signOutProceed } from './actions';
 
 import api from '~/services/api';
 import history from '~/services/history';
+// eslint-disable-next-line import/no-cycle
 import { store } from '~/store';
 
 export function* signIn({ payload }) {
@@ -84,7 +85,7 @@ export function setApiConfiguration({ payload }) {
     api.interceptors.response.use(
       (interceptorResponse) => interceptorResponse,
       (error) => {
-        if (error.response.status === 401) {
+        if (error?.response?.status === 401) {
           toast.error('Sua sessão expirou, faça o login novamente', {
             autoClose: 6000,
           });

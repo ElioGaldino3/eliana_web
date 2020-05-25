@@ -8,12 +8,19 @@ export const Wrapper = styled.div`
 
   justify-content: center;
   align-items: center;
+
+  svg {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+  }
 `;
 
 export const Content = styled.div`
   width: 100%;
   max-width: 315px;
   text-align: center;
+  position: absolute;
 
   form {
     display: flex;
